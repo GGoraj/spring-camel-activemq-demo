@@ -1,0 +1,24 @@
+This app is all about Camel Routing.
+App is sending all files from /data folder to activemq.
+Then files are received from the queue and streamed to output folder (after stopping the app)
+
+
+Requirements: activemq on port 61616 with login: admin, password: admin. and java 8
+
+Howto:
+
+run activemq
+goto admin panel
+run application
+look to the /data/output data
+
+
+
+config/ActiveMQConfig.java - responsible for configuration of Activemq component
+routing/CamelRouting.java - configures camel pipelines
+DemoApplication.java - starts Spring Boot container
+
+resources/application.yml - defines 3 profiles: development, staging and production.
+                            allows additional configuration of databases etc.
+                            in this case: introduces activemq endpoint and login data
+                            for spring framework
